@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+*/ml-25m-clip_none
+./data/ml-25m-clip_none.zip
+
+/models

@@ -25,6 +25,6 @@ python.exe -m pip install --upgrade pip
 
 # Install packages
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
-pip install numpy pandas scikit-learn matplotlib ipykernel jupyterlab tqdm torch_geometric
+pip install numpy pandas scikit-learn matplotlib ipykernel jupyterlab tqdm torch_geometric einops
 
 Write-Host "All dependencies installed successfully!" -ForegroundColor Green
