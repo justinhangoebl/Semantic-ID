@@ -57,10 +57,7 @@ class RQ_VAE(nn.Module):
             dropout=0.1
         )
         
-        self.reconstruction_loss = (
-            CategoricalReconstuctionLoss(num_cat_features) if num_cat_features != 0
-            else ReconstructionLoss()
-        )
+        self.reconstruction_loss = ReconstructionLoss()
         
     def encode(self, x):
         return self.encoder(x)
@@ -118,5 +115,15 @@ class RQ_VAE(nn.Module):
         rqvae_loss=rqvae_loss.mean()
         embs_norm=embs_norm
         p_unique_ids=p_unique_ids
+        
+        #z = self.encode(x)
+        #x_hat = self.decode(z)
+        #
+        #loss = self.reconstruction_loss(x_hat, x).mean()
+        #reconstruction_loss = loss
+        #rqvae_loss = 0
+        #embs_norm = 0
+        #p_unique_ids = 0
+        
         
         return loss, reconstruction_loss, rqvae_loss, embs_norm, p_unique_ids
